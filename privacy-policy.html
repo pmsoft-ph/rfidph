@@ -16,9 +16,9 @@
 <body>
 
 <h1>Privacy Policy - RFID PH</h1>
-<p class="updated">Last updated: November 16, 2026</p>
+<p class="updated">Last updated: November 26, 2026</p>
 
-<p>RFID PH ("the app") lets you check your Autosweep and Easytrip balances and see your tolls and reloads. This page explains what the app keeps and what it sends.</p>
+<p>RFID PH ("the app") lets you check your Autosweep and Easytrip balances and see your tolls and reloads. This page explains what the app keeps, what it sends, and how to delete your data.</p>
 
 <h2>What is saved on your phone</h2>
 <ul>
@@ -27,11 +27,22 @@
   <li>The tolls and reloads of months you have viewed, for up to 6 months</li>
   <li>Statements you have opened: past months for up to 6 months, this month's for up to an hour</li>
 </ul>
-<p>All of this stays on your phone and is never sent to us. Uninstalling the app deletes it.</p>
+<p>All of this stays on your phone and is never stored by us. Uninstalling the app deletes it.</p>
+<p>If you sign in to your own DriveHub or Autosweep account in the app, that login is kept in your phone's secure storage. It is sent only to MPT (DriveHub) or Autosweep, never to us. Signing out of it in the app deletes it from your phone.</p>
 
 <h2>What is sent over the internet</h2>
-<p>To check a balance, tolls, reloads or a statement, the app sends the account number to Autosweep or Easytrip - nowhere else. We have no server, so none of it reaches us.</p>
-<p>The app also downloads announcements and settings from our website, hosted on GitHub, and gets the settings it needs to reach the providers from Google Firebase. To confirm the request comes from the real app, it uses Apple App Attest on iPhone or Google Play Integrity on Android. These requests carry none of your data.</p>
+<p>To check a balance, tolls, reloads or a statement, the app first asks our server, which runs on Google Firebase, for a one-time pass. That request includes the provider, the account number and the plate or card number. Most lookups then go from your phone straight to Autosweep or Easytrip. Some Easytrip balance checks are made by our server for you.</p>
+<p>Our server doesn't keep account numbers in readable form:</p>
+<ul>
+  <li>To apply daily limits, it keeps a one-way code of the account and of your app ID. These records are deleted after about 2 days.</li>
+  <li>For Easytrip balances it checks itself, it keeps the card number and the latest result under a one-way code of the account and plate, for 30 days after the last check.</li>
+</ul>
+<p>The app also downloads announcements and settings from our website, hosted on GitHub. To confirm that requests come from the real app, it uses Apple App Attest on iPhone or Google Play Integrity on Android.</p>
+
+<h2>Your RFID PH account</h2>
+<p>Each install of the app gets an anonymous app ID from Google Firebase. It is used to apply your membership plan and daily limits.</p>
+<p>You can choose to sign in with Apple or Google, so that your membership plan comes back if you reinstall the app or switch phones. If you do, we receive your email address from Apple or Google. With Apple, this can be a private relay address if you choose "Hide My Email". With Google, we also receive your name. These details are stored in Google Firebase Authentication with your app ID. They are used only to sign you in and restore your plan. We don't send you emails or use them for ads.</p>
+<p>Signing out keeps the account, so you can sign in again later. To remove it, delete it (see below).</p>
 
 <h2>Statements</h2>
 <p>A statement shows the account holder's name and address, so the app asks for the account's plate number (or conduction sticker or card number) before opening it. The number you type is not saved. A statement is only shared if you tap Share.</p>
@@ -40,22 +51,31 @@
 <p>Low balance alerts are made on your phone. No outside service is used.</p>
 
 <h2>Purchases</h2>
-<p>Memberships are bought through the App Store or Google Play. We never see your payment details. The app only remembers which membership you have.</p>
+<p>Memberships are bought through the App Store or Google Play. We never see your payment details. The app sends the store's record of your purchase to our server. The server checks it with Apple or Google and records which membership it gives, linked to your app ID.</p>
 
 <h2>Advertising</h2>
-<p>The app shows ads from Google AdMob, which may use your device's advertising ID to show and measure ads, including personalized ads. On iOS, the app asks before allowing tracking, and you can change this in Settings. On Android, you can reset your advertising ID or turn off ad personalization in Settings. See <a href="https://policies.google.com/privacy">Google's privacy policy</a> for more.</p>
+<p>The app shows ads from Google AdMob, which may use your device's advertising ID and approximate location to show and measure ads, including personalized ads. On iOS, the app asks before allowing tracking, and you can change this in Settings. On Android, you can reset your advertising ID or turn off ad personalization in Settings. See Google's privacy policy for more.</p>
 
 <h2>What we don't collect</h2>
-<p>We don't collect your name, email, phone number, location or any other personal information. There is no sign-up or login. We don't sell any data.</p>
+<p>We don't collect your phone number, contacts or precise location. We only receive your email address and name if you sign in with Apple or Google. We don't sell any data.</p>
 
 <h2>Third-party sharing</h2>
 <ul>
   <li>Companies behind an ad may receive data if you tap the ad or install what it advertises.</li>
   <li>Advertising partners may learn which ad led you to install the app.</li>
+  <li>Google Firebase stores the data described above on our behalf.</li>
 </ul>
 
-<h2>Deleting your data</h2>
-<p>Delete an account in the app to remove everything saved for it, or uninstall the app to remove everything. We hold nothing about you, so there is nothing to ask us to delete.</p>
+<h2 id="delete-account">Deleting your account and data</h2>
+<p><strong>In the app:</strong> go to Settings &rarr; Accounts &rarr; RFID PH Account &rarr; Delete account. To confirm, you'll be asked to sign in with Apple or Google once more.</p>
+<p><strong>Without the app:</strong> email <a href="mailto:rfidph-support@googlegroups.com?subject=Delete%20my%20RFID%20PH%20account">rfidph-support@googlegroups.com</a> with the subject "Delete my RFID PH account". Include the email address shown on the app's RFID PH Account screen. We'll delete the account within 30 days and reply to let you know.</p>
+<p>Deleting your account removes:</p>
+<ul>
+  <li>Your Apple or Google sign-in, your email address and your name</li>
+  <li>Your membership plan record, and the link between your app ID and your purchases</li>
+</ul>
+<p>Apple and Google keep their own records of your purchases. A subscription is billed by the App Store or Google Play and doesn't stop when you delete your account, so cancel it in your store's subscription settings. The coded usage records above expire on their own, as described.</p>
+<p>Accounts saved on your phone stay there until you delete them in the app or uninstall it. Signing out of DriveHub or Autosweep in the app removes those logins.</p>
 
 <h2>Contact</h2>
 <p>Questions? Email <a href="mailto:PMSoft.ph@gmail.com">PMSoft.ph@gmail.com</a>.</p>
