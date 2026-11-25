@@ -27,7 +27,7 @@
   <li>The tolls and reloads of months you have viewed, for up to 6 months</li>
   <li>Statements you have opened: past months for up to 6 months, this month's for up to an hour</li>
 </ul>
-<p>All of this stays on your phone and is never stored by us. Uninstalling the app deletes it.</p>
+<p>All of this stays on your phone. Uninstalling the app deletes it from the phone. If you sign in to your RFID PH account, a copy of your account list is also kept with it (see "Account backup" below).</p>
 <p>If you sign in to your own DriveHub or Autosweep account in the app, that login is kept in your phone's secure storage. It is sent only to MPT (DriveHub) or Autosweep, never to us. Signing out of it in the app deletes it from your phone.</p>
 
 <h2>What is sent over the internet</h2>
@@ -44,6 +44,16 @@
 <p>You can choose to sign in with Apple or Google, so that your membership plan comes back if you reinstall the app or switch phones. If you do, we receive your email address from Apple or Google. With Apple, this can be a private relay address if you choose "Hide My Email". With Google, we also receive your name. These details are stored in Google Firebase Authentication with your app ID. They are used only to sign you in and restore your plan. We don't send you emails or use them for ads.</p>
 <p>Signing out keeps the account, so you can sign in again later. To remove it, delete it (see below).</p>
 
+<h2 id="backup">Account backup</h2>
+<p>While you are signed in with Apple or Google, the app keeps a copy of your account list with your RFID PH account, so you can restore it after a reinstall or on a new phone. For each account, the backup holds:</p>
+<ul>
+  <li>The provider, the account number and the nickname you gave it</li>
+  <li>The plate number (or Autosweep card number) and the Easytrip card number</li>
+  <li>Whether it is a favourite, and its place in your list</li>
+</ul>
+<p>It doesn't hold balances, tolls, reloads, statements, or your DriveHub or Autosweep logins. It is stored in Google Firebase, encrypted, and used only to restore your accounts. Restoring is always your choice, and only fills the free slots on your plan.</p>
+<p>Backup is on while you are signed in. Signing out stops backing up that phone's accounts, and the backup stays for when you sign in again. Deleting your RFID PH account deletes the backup (see below), while the accounts on your phone stay. Past copies kept to undo mistakes are deleted after 30 days.</p>
+
 <h2>Statements</h2>
 <p>A statement shows the account holder's name and address, so the app asks for the account's plate number (or conduction sticker or card number) before opening it. The number you type is not saved. A statement is only shared if you tap Share.</p>
 
@@ -57,7 +67,7 @@
 <p>The app shows ads from Google AdMob, which may use your device's advertising ID and approximate location to show and measure ads, including personalized ads. On iOS, the app asks before allowing tracking, and you can change this in Settings. On Android, you can reset your advertising ID or turn off ad personalization in Settings. See Google's privacy policy for more.</p>
 
 <h2>What we don't collect</h2>
-<p>We don't collect your phone number, contacts or precise location. We only receive your email address and name if you sign in with Apple or Google. We don't sell any data.</p>
+<p>We don't collect your phone number, contacts or precise location. We only receive your email address and name, and keep your account backup, if you sign in with Apple or Google. We don't sell any data.</p>
 
 <h2>Third-party sharing</h2>
 <ul>
@@ -73,6 +83,7 @@
 <ul>
   <li>Your Apple or Google sign-in, your email address and your name</li>
   <li>Your membership plan record, and the link between your app ID and your purchases</li>
+  <li>Your account backup, and its past copies</li>
 </ul>
 <p>Apple and Google keep their own records of your purchases. A subscription is billed by the App Store or Google Play and doesn't stop when you delete your account, so cancel it in your store's subscription settings. The coded usage records above expire on their own, as described.</p>
 <p>Accounts saved on your phone stay there until you delete them in the app or uninstall it. Signing out of DriveHub or Autosweep in the app removes those logins.</p>
